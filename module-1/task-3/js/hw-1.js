@@ -2,31 +2,36 @@
 
 
 
-let country = prompt("выберите  страну").toLowerCase();
+let country = prompt("выберите  страну");
 const priceChina = 100;
 const priceAmerica = 250;
 const priceAustralia = 170;
 const priceIndia = 80;
 const priceJamaica = 120;
 
+if (country === null) {
+    console.log("Нажили отмену!");
 
+}else{
+
+country = country.toLowerCase();
 switch (country) {
-    
+
     case 'китай':
-        alert(`Доставка в ${country} будет стоить ${priceChina} кредитов`)
+        console.log(`Доставка в ${country} будет стоить ${priceChina} кредитов`)
         break;
     case 'южная америка':
-        alert(`Доставка в ${country} будет стоить ${priceAmerica} кредитов`)
+        console.log(`Доставка в ${country} будет стоить ${priceAmerica} кредитов`)
         break;
     case 'австралия':
-        alert(`Доставка в ${country} будет стоить ${priceAustralia} кредитов`)
+        console.log(`Доставка в ${country} будет стоить ${priceAustralia} кредитов`)
         break;
     case 'индия':
-        alert(`Доставка в ${country} будет стоить ${priceIndia} кредитов`)
+        console.log(`Доставка в ${country} будет стоить ${priceIndia} кредитов`)
         break;
     case 'ямайка':
-        alert(`Доставка в ${country} будет стоить ${priceJamaica} кредитов`)
+        console.log(`Доставка в ${country} будет стоить ${priceJamaica} кредитов`)
         break;
     default:
-        alert('В вашей стране доставка не доступна')
-}
+        ('В вашей стране доставка не доступна')
+}}
