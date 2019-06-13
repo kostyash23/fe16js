@@ -14,32 +14,32 @@ class Notepad {
     get notes() {
         return this._notes;
     }
-    findNoteById = function (id) {
+    findNoteById  (id) {
         for (const note of this.notes) {
             if (note.id === id) return note;
         }
     }
-    saveNote = function (note) {
+    saveNote (note) {
         this._notes.push(note);
         return note;
     }
-    deleteNote = function (id) {
+    deleteNote  (id) {
         if (this.findNoteById(id)) {
             this._notes.splice(this._notes.indexOf(this.findNoteById(id)), 1);
         }
     };
-    updateNoteContent = function (id, updatedContent) {
+    updateNoteContent (id, updatedContent) {
         if (this.findNoteById(id)) {
             return Object.assign(this.findNoteById(id), updatedContent);
         }
     };
-    updateNotePriority = function (id, priority) {
+    updateNotePriority  (id, priority) {
         if (this.findNoteById(id)) {
             this.findNoteById(id).priority = priority;
             return this.findNoteById(id);
         }
     };
-    filterNotesByQuery = function (query) {
+    filterNotesByQuery (query) {
         const newNotes = [];
 
         for (const note of this._notes) {
@@ -50,7 +50,7 @@ class Notepad {
 
         return newNotes;
     };
-    filterNotesByPriority = function (priority) {
+    filterNotesByPriority  (priority) {
         const newNotes = [];
 
         for (const note of this._notes) {
