@@ -8,7 +8,7 @@ export const getRefs = () => ({
     list: document.querySelector('ul.note-list'),
     search: document.querySelector('form.search-form'),
     form: document.querySelector('form.note-editor'),
-    btnOpen : document.querySelector('#note-editor-modal')
+    btnOpen: document.querySelector('button[data-action="open-editor"]')
 });
 
 
@@ -73,8 +73,7 @@ export const getRefs = () => ({
 export const renderNoteList = (listRef, notes) => {
     const itemArr = notes.map(note => noteTemplate(note)).join('');
     listRef.innerHTML = '';
-    listRef.insertAdjacentHTML('beforeend',itemArr);
+    listRef.insertAdjacentHTML('beforeend', itemArr);
     return listRef;
-  
-   }
 
+}

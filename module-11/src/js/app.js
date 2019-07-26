@@ -30,7 +30,7 @@ const handleEditorSubmit = event => {
     event.preventDefault()
     if (!refs.titleField.value || !refs.bodyField.value) return notyf.error('Необходимо заполнить все поля!');
     if (refs.titleField.value || refs.bodyField.value) {
-        
+
         MicroModal.close('note-editor-modal')
         notyf.success('Заметка добавлена успешно!');
     }
@@ -52,13 +52,19 @@ const handleDelete = event => {
 }
 
 
-
 refs.btnOpen.addEventListener('click', () => {
     MicroModal.show('note-editor-modal');
 });
 
+
 refs.form.addEventListener('submit', handleEditorSubmit)
-refs.list.addEventListener('click', handleDelete)
+refs.list.addEventListener('click', (e) => {
+    if (e.target.parentNode.dataset.action === 'delete-note') {
+        removeListItem(e.target.closest('li'));
+        notyf.success('Заметка удалена');
+    }
+
+})
 refs.search.addEventListener('input', (e) => {
     renderNoteList(refs.list, notepad.filterNotesByQuery(e.target.value))
 })
