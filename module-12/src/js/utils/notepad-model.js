@@ -61,8 +61,9 @@ export default class Notepad {
         return new Promise((resolve) => {
                 setTimeout(() => {
                     const newNotes = this._notes.filter(note => note.title.toLowerCase().includes(query.toLowerCase()) || note.body.toLowerCase().includes(query.toLowerCase()))
+                    resolve(newNotes)
                 }, 300);
-                resolve(newNotes)
+
             })
             // const newNotes = [];
 

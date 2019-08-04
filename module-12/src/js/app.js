@@ -71,5 +71,6 @@ refs.list.addEventListener('click', (e) => {
 
 })
 refs.search.addEventListener('input', (e) => {
-    renderNoteList(refs.list, notepad.filterNotesByQuery(e.target.value))
+    notepad.filterNotesByQuery(e.target.value)
+        .then((res) => { renderNoteList(refs.list, res) })
 })
